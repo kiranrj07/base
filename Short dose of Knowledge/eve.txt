@@ -1,0 +1,53 @@
+/opt/unetlab/addons/dynamips/
+mkdir /opt/unetlab/addons/qemu/cucm
+
+
+
+# fixpermission
+/opt/unetlab/wrappers/unl_wrapper -a fixpermissions
+
+
+#Fix eve-ng SQL database using 
+unl_wrapper -a restoredb
+
+
+
+#provide virtualDisk
+/opt/qemu/bin/qemu-img create -f qcow2 virtioa.qcow2 30G
+
+
+
+
+#Vios images /// or just rename it to  virtioa.qcow2
+/opt/qemu/bin/qemu-img convert -f vmdk -O qcow2 vios-adventerprisek9-m.vmdk.SPA.156-1.
+
+
+
+#license 
+nano -c iourc
+
+
+#commit
+cd /opt/unetlab/tmp/(Pod-no)/(Lab-Id)/(Node-id)/
+
+/opt/qemu/bin/qemu-img commit virtioa.qcow2 -p
+
+/opt/qemu/bin/qemu-img commit -f qcow2 virtioa.qcow2 -p 	[-f force, -p progress]
+
+#compression
+1) From the CLI: go to your windows image directory:
+cd /opt/unetlab/addons/win-7test
+
+2) Perform sparsify cmd / thin-provisioned
+virt-sparsify  –compress virtioa.qcow2 compressedvirtioa.qcow2
+
+
+This will take some time and another compressed image will be created in the same image directory (win-7test)
+now you can rename your original virtioa.qcow2 file to orig.qcow2
+mv virtioa.qcow2 orig.qcow2
+
+Rename the compressed image name to virtioa.qcow2:
+mv compressedvirtioa.qcow2 virtioa.qcow2
+
+now you can test your new compressed image on a lab, just wipe the node and start it.
+If the compressed node works fine, you can delete your original source image:

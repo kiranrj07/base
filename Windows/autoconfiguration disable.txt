@@ -1,0 +1,15 @@
+Step 1: Run > cmd > ipconfig /all
+
+Step 2: netsh interface ipv4 show inter
+11 10 1500 connected Local Area Connection
+Here index number is 11
+
+Step 3: netsh interface ipv4 set interface 11 dadtransmits=0 store=persistent
+run this command to fix the correct index (interface).
+Replace "11" with your index number.
+
+
+Step 4: services.msc
+Disable the DHCP Client service. If you ever go back to DHCP from static, remember to set this back to automatic.
+
+Restart your computer.

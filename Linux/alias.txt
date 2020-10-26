@@ -1,0 +1,27 @@
+List Currently Defined Aliases in Linux
+$ alias
+
+Creating Temporary Aliases
+$ alias shortName="your custom command here"
+Example:
+$ alias wr=”cd /var/www/html”
+
+Creating Permanent Aliases
+Bash – ~/.bashrc
+ZSH – ~/.zshrc
+Fish – ~/.config/fish/config.fish
+
+$ vim ~/.bashrc
+
+#My custom aliases
+alias home=”ssh -i ~/.ssh/mykep.pem tecmint@192.168.0.100”
+alias ll="ls -alF"
+
+Save the file. The file will be automatically loaded in your next session. 
+If you want to use the newly defined alias in the current session, issue the following command:
+$ source ~/.bashrc
+
+
+To remove an alias added via the command line can be unaliased using unalias command.
+$ unalias alias_name
+$ unalias -a [remove all alias]

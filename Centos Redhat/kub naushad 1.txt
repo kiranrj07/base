@@ -1,0 +1,18 @@
+root
+root@123
+
+
+sudo adduser pod12master
+sudo passwd pod12master
+
+root@123
+
+sudo adduser pod12node1
+sudo passwd pod12node1
+
+sudo adduser pod12node2
+sudo passwd pod12node2
+
+sudo gpasswd -a pod12master wheel
+sudo gpasswd -a pod12node1 wheel
+sudo gpasswd -a pod12node2 wheel

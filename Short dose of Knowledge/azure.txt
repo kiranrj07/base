@@ -1,0 +1,35 @@
+https://aboutnetworks.net/eve-ng-on-hyper-v/
+
+sudo passwd root
+
+nano /etc/hostname
+eve-ng
+
+nano /etc/hosts
+127.0.1.1 eve-ng.example.com eve-ng
+
+
+nano /etc/ssh/sshd_config
+PermitRootLogin yes
+
+sudo service ssh restart
+
+restart
+
+sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="net.ifnames=0 noquiet"/' /etc/default/grub
+
+sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="net.ifnames=0 noquiet"/' /etc/default/grub
+
+update-grub
+
+nano /etc/network/interfaces
+auto eth0
+iface eth0 inet dhcp
+
+reboot 
+
+wget -O - http://www.eve-ng.net/repo/install-eve.sh | bash -i
+
+apt-get update
+apt-get upgrade
+reboot

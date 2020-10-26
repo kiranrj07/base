@@ -1,0 +1,11 @@
+Set password for root
+sudo -i
+passwd
+root@123
+root@123
+
+The next command will configure SSH server to allow root ssh login: 
+#sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+
+Restart SSH server to apply changes: 
+#sudo service ssh restart

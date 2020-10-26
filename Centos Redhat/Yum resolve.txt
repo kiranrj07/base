@@ -1,0 +1,6 @@
+As you have discovered, the package of epel-release is causing the issue. If you haven't already:
+# yum remove epel-release
+
+Then install the EPEL Repo with the following (requires wget package):
+# wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm
+# rpm -ivh epel-release-7-9.noarch.rpm

@@ -1,0 +1,26 @@
+10.1.1.111
+10.1.1.202
+10.1.1.203
+
+10.1.1.
+
+pod1master
+pod1node1
+pod1node2
+
+root@123
+
+sudo reboot
+
+sudo userdel -r pod1master
+sudo userdel -r pod1node1
+sudo userdel -r pod1node2
+
+
+
+
+
+
+
+
+

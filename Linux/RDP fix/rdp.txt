@@ -1,0 +1,19 @@
+RDP fix
+
+Reference: https://c-nergy.be/blog/?p=14888
+
+Unzip patch_file and install it
+
+Change privileage to execute
+chmod +x  ~/Downloads/xrdp-installer-1.2.sh
+
+
+Install
+./xrdp-installer-1.2.sh
+
+sudo nano  /etc/xrdp/startwm.sh
+
+
+unset DBUS_SESSION_BUS_ADDRESS
+unset XDG_RUNTIME_DIR
+. $HOME/.profile

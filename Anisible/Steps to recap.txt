@@ -1,0 +1,32 @@
+sudo apt install ansible -y
+
+Install sshpass package
+#sudo apt-get install sshpass -y
+
+Step 1: Default direcotry for inventory is: cd /etc/ansible and it contains
+
+ansible.cfg    [uncomment below section]
+[defaults]
+host_key_checking = false
+
+hosts [This is the default directory]    [Add below line and check for pinging]
+192.168.0.106 ansible_ssh_pass=root@123 ansible_ssh_user=master
+
+To run ansible with respect to hosts file [Default inventory file]
+ansible 192.168.0.106 -m ping  [-m stands for modules]
+
+To run ansible with respect to custom inventory file
+ansible [host,group,group_of_group] -m ping -i inventory_filename
+
+To run ansible with respect to Playbook
+ansible-playbook playbook.yml -i /home/user5/ansible/inventory/inventory.txt\
+
+To run ansible with respect to module
+ansible-playbook [playbook.yml]    [Here we and not mentioning inventory hence default /etc/ansible/hosts is looked]
+
+
+
+
+
+
+

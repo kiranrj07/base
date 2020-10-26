@@ -1,0 +1,5 @@
+How to Fix ‘E: Could not get lock /var/lib/dpkg/lock’ Error in Ubuntu Linux
+
+ps aux | grep -i apt
+
+sudo kill <process_id>

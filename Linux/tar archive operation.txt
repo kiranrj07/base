@@ -1,0 +1,46 @@
+UNZIP
+
+#install zip
+sudo apt install unzip
+
+#unzip
+unzip latest.zip
+
+#unzip in different directory
+unzip filename.zip -d /path/to/directory
+
+#list the content of zip
+unzip -l filename.zip
+
+
+TAR
+
+#Extract a tar.gz archive
+tar -xvzf bigfile.tar.gz
+
+x –  Extract files
+v – Verbose, print the file names as they are extracted one by one
+z – The file is a “gzipped” file
+f – Use the following tar archive for the operation
+
+#Extract files to a specific directory or path
+tar -xvzf bigfile.tar.gz -C /folder/subfolder/
+
+#Extract a single file
+tar -xz -f Music.tar.gz “./new/one.mp3”
+
+#To extract more than one file out of an archive
+tar -xv -f Music.tar.gz “./new/two.mp3” “./new/three.mp3”
+
+
+#Extract multiple files using wildcards
+tar -xv -f Music.tar.gz –wildcards “*.mp3”
+
+#List and search contents of the tar archive
+tar -tz -f abc.tar.gz
+
+#Create a tar/tar.gz archive
+tar -cvf Videos.tar ./Latest/
+
+#Add files to existing archives
+tar -rv -f Book.tar pageone.txt

@@ -1,0 +1,9 @@
+ git clone http://github.com/lerndevops/labs
+   cd labs
+  cd docker/
+   cd install
+   
+   ./installDocker.sh
+    docker pull leaddevops/petclinic:3
+
+

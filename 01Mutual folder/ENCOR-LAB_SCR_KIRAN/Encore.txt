@@ -1,0 +1,62 @@
+Discovery 1 Investigate the CAM : completed [completed with latest vm]
+
+Discovery 2 Analyze Cisco Express Forwarding : completed
+
+Discovery 3 Troubleshoot VLAN and Trunk Issues : 1) Step 1 - vlan 10 not available
+
+Discovery 4 Tuning STP and Configuring RSTP : completed [completed with latest vm]
+
+Discovery 5 Configure Multiple Spanning Tree Protocol : vlan ports on blocking state by default. [completed with latest vm] check for port g1/1
+
+Discovery 6 Troubleshoot EtherChannel : completed  [completed with latest vm]
+
+Discovery 7 Implement Multiarea OSPF : Completed [completed with latest vm]
+
+Discovery 8 Implement OSPF Tuning : partial completed. task 3 is pending  [completed with latest vm]
+
+Discovery 9 Apply OSPF Optimization : completed [completed with latest vm]
+
+Discovery 10 Implement OSPFv3 : completed [completed with latest vm]
+
+Discovery 11 Configure and Verify Single-Homed EBGP : completed [completed with latest vm]
+
+Discovery 12 Implementing HSRP : completed [completed with latest vm]
+
+Discovery 13: Configure VRRP : completed [completed with latest vm]
+
+Discovery 14: Implement NAT : completed [completed with latest vm]
+
+Discovery 15: Configure and Verify VRF : completed [completed with latest vm]
+
+Discovery 16: Configure and Verify a GRE Tunnel : completed [completed with latest vm]
+
+Discovery 17: Configure Static VTI Point-to-Point Tunnels : completed [completed with latest vm]
+
+Discovery 20: Configure Syslog : completed [completed with latest vm]
+
+Discovery 21: Configure and Verify Flexible NetFlow : completed  [completed with latest vm]
+
+Discovery 22: Configuring Cisco IOS Embedded Event Manager (EEM) : [completed with latest vm]
+
+Discovery 23: Troubleshoot Connectivity and Analyze Traffic with Ping, Traceroute, and Debug : completed [completed with latest vm]
+
+Discovery 24: Configure and Verify Cisco IP SLAs : complete [last output varies]
+
+Discovery 25: Configure Standard and Extended ACLs : completed [completed with latest vm] justcheck
+
+Discovery 26 Configure Control Plane Policing : completed [competed with latest vm]
+
+Discovery 28 Writing and Troubleshooting Python Scripts : completed [completed with latest vm]
+
+Discovery 29 Explore JSON Objects and Scripts in Python : completed [competed with latest vm]
+
+Discovery 30 Use NETCONF Via SSH: incompete 
+
+Discovery 31 Use RESTCONF with Cisco IOS XE Software: incomplete
+
+
+
+
+
+
+

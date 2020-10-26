@@ -1,0 +1,148 @@
+hostname TW360ROUTER
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable password root@458
+!
+no aaa new-model
+ethernet lmi ce
+clock timezone UTC 5 30
+clock calendar-valid
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip dhcp excluded-address 10.1.1.1 10.1.1.100
+ip dhcp excluded-address 10.1.1.254
+!
+ip dhcp pool DHCPSERVER1
+ network 10.1.1.0 255.255.255.0
+ default-router 10.1.1.254
+ dns-server 103.8.45.5
+!
+!
+!
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+license udi pid CISCO2911/K9 sn FGL151011TN
+license accept end user agreement
+license boot module c2900 technology-package securityk9
+license boot module c2900 technology-package uck9 disable
+license boot module c2900 technology-package datak9 disable
+!
+!
+vtp mode transparent
+username cisco password 0 cisco
+username admin password 0 root@458
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ ip address 14.99.7.86 255.255.255.252
+ ip nat outside
+ ip virtual-reassembly in
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ ip address 10.1.1.254 255.255.255.0
+ ip nat inside
+ ip virtual-reassembly in
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+ip nat inside source list 1 interface GigabitEthernet0/0 overload
+ip nat inside source static tcp 10.1.1.158 3389 14.99.7.86 1000 extendable
+ip nat inside source static tcp 10.1.1.5 3389 14.99.7.86 1001 extendable
+ip nat inside source static tcp 10.1.1.10 3389 14.99.7.86 1002 extendable
+ip nat inside source static tcp 10.1.1.14 3389 14.99.7.86 1003 extendable
+ip nat inside source static tcp 10.1.1.106 3389 14.99.7.86 1004 extendable
+ip nat inside source static tcp 10.1.1.107 3389 14.99.7.86 1005 extendable
+ip nat inside source static tcp 10.1.1.165 3389 14.99.7.86 1006 extendable
+ip nat inside source static tcp 10.1.1.108 3389 14.99.7.86 1007 extendable
+ip nat inside source static tcp 10.1.1.108 3389 14.99.7.86 1008 extendable
+ip nat inside source static tcp 10.1.1.181 3389 14.99.7.86 2001 extendable
+ip nat inside source static tcp 10.1.1.182 3389 14.99.7.86 2002 extendable
+ip nat inside source static tcp 10.1.1.183 3389 14.99.7.86 2003 extendable
+ip nat inside source static tcp 10.1.1.184 3389 14.99.7.86 2004 extendable
+ip nat inside source static tcp 10.1.1.185 3389 14.99.7.86 2005 extendable
+ip nat inside source static tcp 10.1.1.186 3389 14.99.7.86 2006 extendable
+ip nat inside source static tcp 10.1.1.187 3389 14.99.7.86 2007 extendable
+ip nat inside source static tcp 10.1.1.188 3389 14.99.7.86 2008 extendable
+ip nat inside source static tcp 10.1.1.189 3389 14.99.7.86 2009 extendable
+ip nat inside source static tcp 10.1.1.190 3389 14.99.7.86 2010 extendable
+ip nat inside source static tcp 10.1.1.191 3389 14.99.7.86 2011 extendable
+ip nat inside source static tcp 10.1.1.192 3389 14.99.7.86 2012 extendable
+ip nat inside source static tcp 10.1.1.11 80 14.99.7.86 3001 extendable
+ip nat inside source static tcp 10.1.1.11 80 14.99.7.86 3002 extendable
+ip nat inside source static tcp 10.1.1.11 80 14.99.7.86 3003 extendable
+ip nat inside source static tcp 10.1.1.11 80 14.99.7.86 3004 extendable
+ip nat inside source static tcp 10.1.1.44 80 14.99.7.86 3009 extendable
+ip route 0.0.0.0 0.0.0.0 14.99.7.85
+!
+!
+!
+access-list 1 permit 10.1.1.0 0.0.0.255
+!
+control-plane
+!
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login local
+ transport input all
+!
+scheduler allocate 20000 1000
+!
+end

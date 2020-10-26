@@ -1,0 +1,50 @@
+is eve-ng running on dockers containers
+no  its running on ubuntu
+dockers is a side tool that you can use
+ok.
+
+i also face issue like, node not starting up with start up config,
+when working as users preiviliage, it happens in random? y
+
+you're using old Eve
+the current version of Eve is 3.x you are on 2.x
+hmm ok ok, hope ugrading wont crash our labs becasue labs are going to be deployed after 3 days ?
+hopefully not
+here's what we are going to do
+I will upgrade to the last 2.x and you test your labs and remove the lab
+you dont need, then I will leave, you deploy your labs later, after 3-4 days
+you come back I will upgrade it to 3.x 
+
+sounds good but your not upgrading it now ?
+minor upgrade
+ok. ok 
+we are using 2 eve-ng pro so i may have to upgradge that as well
+when you do the upgrade accept the defaults
+try now
+ok
+
+
+Thank you. 
+really appreciated.
+
+wait just so you know I didnt upgrade to the latest 2.x
+and I wont until you deploy your labs later
+
+on your other Eve vm
+do this 
+apt update
+apt upgrade
+apt autoremove
+accept the defaults
+check your labs
+
+look fine.
+ok good 
+deploy them in 3 days , backup your images and labs
+and come back we will do major upgrades, it will take time
+please make sure your internet is fast as it is now
+it will be very big
+yes noted, Thanks again. really helpful.
+You're Welcome :)
+bye now
+

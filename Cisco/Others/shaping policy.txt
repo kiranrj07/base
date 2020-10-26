@@ -1,0 +1,33 @@
+ip access-list extended CUST_ACL
+
+permit ip 10.1.2.0 0.0.0.255 any
+
+!
+
+class-map match-all CUST_CMAP
+
+match access-group name CUST_ACL
+
+!
+
+policy-map CUST_PMAP
+
+class CUST_CMAP
+
+police 8000 3000
+
+!
+
+interface g0/0
+service-policy input CUST_PMAP
+
+class-map match-all tcp
+!
+policy-map test
+ class class-default
+  shape average 2000 
+
+inter g0/0
+ service-policy output test
+
+

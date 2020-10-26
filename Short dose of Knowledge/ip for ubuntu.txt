@@ -1,0 +1,47 @@
+ipv4 ubuntu
+
+#ip for eve-ng with 1 mgmt
+
+# The primary network interface
+iface eth0 inet manual
+auto pnet0
+iface pnet0 inet static
+    address 10.1.1.33
+    netmask 255.255.255.0
+    gateway 10.1.1.254
+    dns-domain example.com
+    dns-nameservers 103.8.44.5 8.8.8.8
+    bridge_ports eth0
+    bridge_stp off
+
+
+
+
+# vim /etc/network/interfaces
+
+auto eth0
+  iface eth0 inet static
+  address 10.1.1.66
+  netmask 255.255.255.0
+  gateway 10.1.1.254
+  dns-nameservers 8.8.8.8 4.4.2.2
+
+
+
+
+ipv6 ubuntu
+
+
+# vim /etc/sysctl.conf
+
+net.ipv6.conf.default.disable_ipv6 = 0
+net.ipv6.conf.all.disable_ipv6 = 0
+
+# vim /etc/network/interfaces
+iface eth0 inet6 static
+pre-up modprobe ipv6
+address IPv6-IP-Address
+netmask 64
+gateway IPv6-IP-Gateway-Address
+
+# service networking restart

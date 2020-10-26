@@ -1,0 +1,2 @@
+
+net stop "Bluetooth Support Service" && net start "Bluetooth Support Service"

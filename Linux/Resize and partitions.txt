@@ -1,0 +1,5 @@
+#Navigate to the disk folder and enter the following command
+qemu-img resize vmdisk.img +10G
+
+#Use below command for partitions
+https://www.tecmint.com/extend-and-reduce-lvms-in-linux/

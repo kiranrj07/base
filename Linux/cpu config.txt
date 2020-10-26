@@ -1,0 +1,2 @@
+lscpu command.
+cat /proc/cpuinfo

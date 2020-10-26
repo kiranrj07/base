@@ -1,0 +1,30 @@
+#change mac address
+
+sudo ifconfig eth0 down
+
+sudo ifconfig eth0 hw ether 00:0c:29:9f:ba:53
+
+sudo ifconfig eth0 up
+
+#restart network
+#netplan
+sudo netplan apply
+#systemctl
+sudo  systemctl restart NetworkManager.service
+#service
+sudo service network-manager restart
+#nmcli
+sudo nmcli networking off
+sudo nmcli networking on
+#ifup/ifdown
+sudo ifdown -a
+sudo ifup -a
+
+#Device not managed
+
+sudo nano /etc/NetworkManager/NetworkManager.conf
+change the line managed=false to managed=true
+
+Save, stop and start network manager:
+
+sudo service network-manager restart

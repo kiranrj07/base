@@ -1,0 +1,2 @@
+tee: The tee command is normally used to split the output of a program so that it can be both displayed and saved in a file. 
+The command can be used to capture intermediate output before the data is altered by another command or program. The tee command reads standard input, then writes its content to standard output
